@@ -30,7 +30,7 @@ public class PackagesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<Package> items)
     {
         if (items == null || items.Count == 0)
@@ -82,7 +82,7 @@ public class PackagesController : ApiController
         }
     }
 
-    [HttpPut]
+    [HttpPost]
     public bool Update([FromBody]Package item)
     {
         try
@@ -101,7 +101,7 @@ public class PackagesController : ApiController
         }
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Install(string id)
     {
         if (string.IsNullOrEmpty(id))
@@ -111,7 +111,7 @@ public class PackagesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Uninstall(string id)
     {
         if (string.IsNullOrEmpty(id))
@@ -121,7 +121,7 @@ public class PackagesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Rate(string id, [FromBody]Review review)
     {
         if (review == null) return Request.CreateResponse(HttpStatusCode.ExpectationFailed, "Review can not be null");
@@ -133,7 +133,7 @@ public class PackagesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public bool Refresh()
     {
         try
@@ -148,7 +148,7 @@ public class PackagesController : ApiController
         }
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage SetTheme(string id)
     {
         if (!string.IsNullOrEmpty(id))

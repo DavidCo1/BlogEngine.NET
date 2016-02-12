@@ -125,7 +125,7 @@
            .error(function () { toastr.error($rootScope.lbl.updateFailed); spinOff(); });
         }
         else {
-            dataService.addItem('api/posts', $scope.post)
+            dataService.addItem('api/posts/post/', $scope.post)
            .success(function (data) {
                toastr.success($rootScope.lbl.postAdded);
                if (data.Id) {

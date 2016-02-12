@@ -35,7 +35,7 @@ public class PingServicesController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, pings);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<PingItem> items)
     {
         if (items == null || items.Count == 0)

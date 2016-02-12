@@ -18,7 +18,7 @@ public class LookupsController : ApiController
         return repository.GetLookups();
     }
 
-    [HttpPut]
+    [HttpPost]
     public bool Update([FromBody]EditorOptions item)
     {
         try

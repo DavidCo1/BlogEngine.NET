@@ -38,7 +38,7 @@ public class CategoriesController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]CategoryItem item)
     {
         repository.Update(item);
@@ -53,7 +53,7 @@ public class CategoriesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<CategoryItem> items)
     {
         if (items == null || items.Count == 0)

@@ -57,7 +57,7 @@ public class RolesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<RoleItem> items)
     {
         if (items == null || items.Count == 0)
@@ -92,7 +92,7 @@ public class RolesController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage SaveRights([FromBody]List<Group> rights, string id)
     {
         repository.SaveRights(rights, id); 

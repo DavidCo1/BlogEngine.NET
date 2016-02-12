@@ -73,7 +73,7 @@ public class BlogRollController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, br);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]BlogRollRowItem item)
     {
         var br = BlogRollItem.GetBlogRollItem(item.Id);
@@ -91,7 +91,7 @@ public class BlogRollController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<BlogRollRowItem> items)
     {
         if (items == null || items.Count == 0)

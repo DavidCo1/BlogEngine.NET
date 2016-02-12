@@ -29,14 +29,14 @@ public class CommentFilterController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage DeleteAll()
     {
         repository.RemoveAll();
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<BlogEngine.Core.Data.Models.Blog> items)
     {
         if (items == null || items.Count == 0)

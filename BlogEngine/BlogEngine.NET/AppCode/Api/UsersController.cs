@@ -38,21 +38,21 @@ public class UsersController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]BlogUser item)
     {
         repository.Update(item);
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage SaveProfile([FromBody]BlogUser item)
     {
         repository.SaveProfile(item);
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<BlogUser> items)
     {
         if (items == null || items.Count == 0)

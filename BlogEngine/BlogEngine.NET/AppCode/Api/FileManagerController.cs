@@ -21,7 +21,7 @@ public class FileManagerController : ApiController
         return repository.Find(take, skip, path, order);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<FileInstance> items)
     {
         if (items == null || items.Count == 0)
@@ -46,7 +46,7 @@ public class FileManagerController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage AddFolder(FileInstance folder)
     {
         BlogService.CreateDirectory(folder.FullPath + "/" + folder.Name);

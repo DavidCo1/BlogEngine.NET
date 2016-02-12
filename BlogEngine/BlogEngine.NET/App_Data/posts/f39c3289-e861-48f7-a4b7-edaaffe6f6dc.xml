@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <post>
   <author>Admin</author>
-  <title>Welcome to BlogEngine.NET</title>
+  <title>Welcome to BlogEngine.NET 21</title>
   <description>If you see this post it means that BlogEngine.NET is running and the hard part of creating your own </description>
   <content>&lt;p&gt;If you see this post it means that BlogEngine.NET is running and the hard part of creating your own blog is done. There is only a few things left to do.&lt;/p&gt;
 &lt;h2&gt;Write Permissions&lt;/h2&gt;
@@ -20,14 +20,13 @@
   <ispublished>True</ispublished>
   <isdeleted>False</isdeleted>
   <iscommentsenabled>True</iscommentsenabled>
-  <pubDate>2015-09-23 20:04:00</pubDate>
-  <lastModified>2015-09-23 21:07:50</lastModified>
+  <pubDate>2015-09-23 17:04:00</pubDate>
+  <lastModified>2016-02-08 21:23:38</lastModified>
   <raters>0</raters>
   <rating>0</rating>
   <slug>welcome-to-blogengine-net</slug>
   <tags>
     <tag>welcome</tag>
-    <tag>blog</tag>
   </tags>
   <comments>
     <comment id="61c640cb-7782-4a1d-ab79-25bd4613fc4e" parentid="00000000-0000-0000-0000-000000000000" approved="True" spam="False" deleted="False">
@@ -52,6 +51,7 @@
     </comment>
   </comments>
   <categories>
+    <category>c223353c-1aef-4a46-afd1-cb61ab1a792d</category>
     <category>19770e74-9ec9-4cde-b2ab-e5051aaaf348</category>
   </categories>
   <notifications />

@@ -20,7 +20,7 @@ public class TagsController : ApiController
         return repository.Find(take, skip, postId, order);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]TagToUpdate tag)
     {
         repository.Save(tag.OldTag, tag.NewTag);
@@ -33,7 +33,7 @@ public class TagsController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<TagItem> items)
     {
         if (items == null || items.Count == 0)

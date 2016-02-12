@@ -30,6 +30,7 @@ public class PostsController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK, result);
     }
 
+    [HttpPost]
     public HttpResponseMessage Post([FromBody]PostDetail item)
     {
         var result = repository.Add(item);
@@ -39,14 +40,14 @@ public class PostsController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]PostDetail item)
     {
         repository.Update(item, "update");
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<PostDetail> items)
     {
         if (items == null || items.Count == 0)

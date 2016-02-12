@@ -38,14 +38,14 @@ public class PagesController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]PageDetail item)
     {
         repository.Update(item, "update");
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<PageDetail> items)
     {
         if (items == null || items.Count == 0)

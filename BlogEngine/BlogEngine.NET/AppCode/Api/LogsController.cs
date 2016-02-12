@@ -28,7 +28,7 @@ public class LogsController : ApiController
         return new List<SelectOption>();
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage PurgeLog()
     {
         if (!Security.IsAuthorizedTo(BlogEngine.Core.Rights.AccessAdminPages))

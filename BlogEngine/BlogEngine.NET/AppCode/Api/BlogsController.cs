@@ -38,7 +38,7 @@ public class BlogsController : ApiController
         return Request.CreateResponse(HttpStatusCode.Created, result);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Update([FromBody]BlogEngine.Core.Data.Models.Blog blog)
     {
         repository.Update(blog);
@@ -53,7 +53,7 @@ public class BlogsController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<BlogEngine.Core.Data.Models.Blog> items)
     {
         if (items == null || items.Count == 0)

@@ -53,7 +53,7 @@ public class CommentsController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 	
-	[HttpPut]
+	[HttpPost]
     public HttpResponseMessage ProcessChecked([FromBody]List<CommentItem> items)
     {
         if (items == null || items.Count == 0)
@@ -79,7 +79,7 @@ public class CommentsController : ApiController
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage DeleteAll([FromBody]CommentItem item)
     {
         var action = Request.GetRouteData().Values["id"].ToString();

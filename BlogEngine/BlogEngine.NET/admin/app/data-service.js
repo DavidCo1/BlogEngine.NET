@@ -20,14 +20,14 @@
             if (item.Id) {
                 return $http({
                     url: webRoot(url) + "/" + item.Id,
-                    method: 'DELETE',
+                    method: 'GET',
                     headers: { 'x-blog-instance': SiteVars.BlogInstanceId }
                 });
             }
             else {
                 return $http({
                     url: webRoot(url),
-                    method: 'DELETE',
+                    method: 'GET',
                     data: item,
                     headers: { 'Content-Type': 'application/json', 'x-blog-instance': SiteVars.BlogInstanceId }
                 });
@@ -38,7 +38,7 @@
         deleteById: function (url, id) {
             return $http({
                 url: webRoot(url) + "/" + id,
-                method: 'DELETE',
+                method: 'GET',
                 headers: { 'x-blog-instance': SiteVars.BlogInstanceId }
             });
         },
@@ -46,7 +46,7 @@
         deleteChecked: function (url, items) {
             return $http({
                 url: webRoot(url) + url,
-                method: 'DELETE',
+                method: 'GET',
                 data: items,
                 headers: { 'x-blog-instance': SiteVars.BlogInstanceId }
             });
@@ -54,7 +54,7 @@
         updateItem: function (url, item) {
             return $http({
                 url: webRoot(url),
-                method: 'PUT',
+                method: 'POST',
                 data: item,
                 headers: { 'x-blog-instance': SiteVars.BlogInstanceId }
             });
@@ -63,7 +63,7 @@
         processChecked: function (url, items) {
             return $http({
                 url: webRoot(url),
-                method: 'PUT',
+                method: 'POST',
                 data: items,
                 headers: { 'x-blog-instance': SiteVars.BlogInstanceId }
             });

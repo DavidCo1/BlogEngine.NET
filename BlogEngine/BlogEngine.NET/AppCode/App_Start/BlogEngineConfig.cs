@@ -199,8 +199,8 @@ namespace BlogEngine.NET.App_Start
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            config.Routes.MapHttpRoute("DefaultApiWithActionAndId", "api/{controller}/{action}/{id}");
+            
+            config.Routes.MapHttpRoute("DefaultApiWithActionAndId", "api/{controller}/{action}/{id}", defaults: new { id = RouteParameter.Optional });
 
             config.Filters.Add(new UnauthorizedAccessExceptionFilterAttribute());
 

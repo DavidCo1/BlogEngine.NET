@@ -20,21 +20,21 @@ public class TrashController : ApiController
         return repository.GetTrash((TrashType)type, take, skip, filter, order);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Purge(TrashItem item)
     {
         repository.Purge(item.ObjectType, item.Id);
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage PurgeAll()
     {
         repository.PurgeAll();
         return Request.CreateResponse(HttpStatusCode.OK);
     }
 
-    [HttpPut]
+    [HttpPost]
     public HttpResponseMessage Restore(TrashItem item)
     {
         repository.Restore(item.ObjectType, item.Id);
