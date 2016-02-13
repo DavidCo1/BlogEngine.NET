@@ -34,7 +34,7 @@
 
     $scope.showEditForm = function (id) {
         $scope.vm.SelectedItem = findInArray($scope.items, 'Id', id);
-        dataService.getItems("/api/comments/" + id)
+        dataService.getItems("/api/comments/get/" + id)
         .success(function (data) {
             angular.copy(data, $scope.vm.Detail);
             $("#modal-comment-edit").modal();
@@ -51,7 +51,7 @@
             "PostId": postId,
             "Content": $scope.commentReply.text
         }
-        dataService.addItem("/api/comments", comment)
+        dataService.addItem("/api/comments/post", comment)
         .success(function (data) {
             toastr.success($rootScope.lbl.commentUpdated);
             $scope.load();

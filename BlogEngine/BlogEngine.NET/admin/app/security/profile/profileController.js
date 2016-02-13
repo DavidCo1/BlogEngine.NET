@@ -10,7 +10,7 @@
 
     $scope.load = function () {
         spinOn();
-        dataService.getItems('/api/users/' + UserVars.Name)
+        dataService.getItems('/api/users/get/' + UserVars.Name)
         .success(function (data) {
             angular.copy(data, $scope.user);
             $scope.loadCustom();

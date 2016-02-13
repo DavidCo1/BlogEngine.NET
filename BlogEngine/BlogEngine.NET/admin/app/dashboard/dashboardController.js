@@ -20,7 +20,7 @@
             "HasCommentsEnabled": true,
             "IsPublished": false
         }  
-        dataService.addItem('api/posts', draft)
+        dataService.addItem('api/posts/post/', draft)
         .success(function (data) {
             $scope.qd = angular.copy(newDraft);
             var dft = {

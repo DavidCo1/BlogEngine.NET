@@ -5,7 +5,7 @@
     $scope.reverse = true;
 
     $scope.load = function () {
-        var url = '/api/posts/';
+        var url = '/api/posts/get';
         var p = { take: 0, skip: 0 }
 
         spinOn();

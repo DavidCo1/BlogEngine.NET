@@ -28,6 +28,7 @@ public class SettingsController : ApiController
         return repository.Get();
     }
 
+    [HttpPost]
     public HttpResponseMessage Put([FromBody]Settings settings, string action = "")
     {
         if (action == "testEmail")

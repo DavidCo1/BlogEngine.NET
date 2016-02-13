@@ -25,7 +25,7 @@
     }
 
     $scope.loadSettings = function () {
-        dataService.getItems('/api/settings')
+        dataService.getItems('/api/settings/get')
         .success(function (data) {
             angular.copy(data, $scope.vm);
             $scope.settings = $scope.vm.Settings;
@@ -63,7 +63,7 @@
         $scope.settings.FacebookLanguage = $scope.selFacebookLanguage.OptionValue;
         $scope.settings.txtErrorTitle = $scope.txtErrorTitle;
 
-        dataService.updateItem("/api/settings", $scope.settings)
+        dataService.updateItem("/api/settings/put", $scope.settings)
         .success(function (data) {
             toastr.success($rootScope.lbl.settingsUpdated);
             $scope.load();

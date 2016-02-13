@@ -52,7 +52,7 @@
 
     $scope.loadPost = function () {
         spinOn();
-        var url = '/api/posts/' + $scope.id;
+        var url = '/api/posts/get/' + $scope.id;
         dataService.getItems(url)
         .success(function (data) {
             angular.copy(data, $scope.post);
@@ -182,7 +182,7 @@
 
     $scope.refreshPost = function () {
         spinOn();
-        var url = '/api/posts/' + $scope.id;
+        var url = '/api/posts/get/' + $scope.id;
         dataService.getItems(url)
         .success(function (data) {
             angular.copy(data, $scope.post);

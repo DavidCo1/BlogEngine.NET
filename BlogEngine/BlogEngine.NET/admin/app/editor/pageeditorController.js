@@ -32,7 +32,7 @@
 
     $scope.loadPage = function () {
         spinOn();
-        var url = '/api/pages/' + $scope.id;
+        var url = '/api/pages/get/' + $scope.id;
         dataService.getItems(url)
         .success(function (data) {
             angular.copy(data, $scope.page);
@@ -88,7 +88,7 @@
            });
         }
         else {
-            dataService.addItem('/api/pages', $scope.page)
+            dataService.addItem('/api/pages/post/', $scope.page)
            .success(function (data) {
                toastr.success("Page added");
                $log.log(data);

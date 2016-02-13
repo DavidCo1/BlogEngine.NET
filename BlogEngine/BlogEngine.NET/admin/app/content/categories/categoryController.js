@@ -6,7 +6,7 @@
     $scope.focusInput = false;
 
     if ($scope.id) {
-        dataService.getItems('/api/categories', { Id: $scope.id })
+        dataService.getItems('/api/categories/get/', { Id: $scope.id })
             .success(function (data) { angular.copy(data, $scope.category); })
             .error(function () { toastr.error($rootScope.lbl.errorLoadingCategory); });
         $("#modal-add-cat").modal();
@@ -25,7 +25,7 @@
             .error(function () { toastr.error("Error loading lookups"); });
 
         var p = { skip: 0, take: 0 };
-        dataService.getItems('/api/categories', p)
+        dataService.getItems('/api/categories/get/', p)
             .success(function (data) {
                 angular.copy(data, $scope.items);
                 gridInit($scope, $filter);
@@ -43,7 +43,7 @@
             return false;
         }
         if ($scope.category.Id) {
-            dataService.updateItem("/api/categories/update/" + $scope.category.Id, $scope.category)
+            dataService.updateItem('/api/categories/update/' + $scope.category.Id, $scope.category)
            .success(function (data) {
                toastr.success($rootScope.lbl.categoryUpdated);
                $scope.load();
@@ -51,7 +51,7 @@
            .error(function (data) { toastr.error(data); });
         }
         else {
-            dataService.addItem("/api/categories", $scope.category)
+            dataService.addItem('/api/categories/post', $scope.category)
            .success(function (data) {
                toastr.success($rootScope.lbl.categoryAdded);
                if (data.Id) {

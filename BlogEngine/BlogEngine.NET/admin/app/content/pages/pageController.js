@@ -4,7 +4,7 @@
     $scope.filter = ($location.search()).fltr;
 
     $scope.load = function () {
-        var url = '/api/pages';
+        var url = '/api/pages/get/';
         var p = { take: 0, skip: 0 }
         spinOn();
         dataService.getItems('/api/pages', p)
